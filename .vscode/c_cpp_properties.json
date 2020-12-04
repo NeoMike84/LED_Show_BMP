@@ -9,7 +9,8 @@
                 "C:\\Users\\simar\\OneDrive\\Documents\\Arduino\\libraries\\Adafruit_NeoPixel",
                 "C:\\Program Files (x86)\\arduino-1.8.13\\libraries\\**",
                 "C:\\Users\\simar\\OneDrive\\Documents\\Arduino\\libraries\\Adafruit_NeoMatrix",
-                "C:\\Users\\simar\\OneDrive\\Documents\\Arduino\\libraries\\Adafruit_GFX_Library"
+                "C:\\Users\\simar\\OneDrive\\Documents\\Arduino\\libraries\\Adafruit_GFX_Library",
+                "C:\\Users\\simar\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.7.4\\**"
             ],
             "forcedInclude": [],
             "intelliSenseMode": "msvc-x64",
