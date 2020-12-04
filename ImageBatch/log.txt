@@ -1,0 +1,262 @@
+Operation "Format conversion" started 22.11.20 at 21:24:21
+Input directory is C:\Users\simar\Downloads\Santa
+Output directory is C:\Users\simar\OneDrive\Documents\Arduino\LED_Show_BMP\data\1
+
+santa_00.png successfully processed
+santa_01.png successfully processed
+santa_02.png successfully processed
+santa_03.png successfully processed
+santa_04.png successfully processed
+santa_05.png successfully processed
+santa_06.png successfully processed
+santa_07.png successfully processed
+santa_08.png successfully processed
+santa_09.png successfully processed
+santa_10.png successfully processed
+santa_11.png successfully processed
+santa_12.png successfully processed
+santa_13.png successfully processed
+santa_14.png successfully processed
+santa_15.png successfully processed
+santa_16.png successfully processed
+santa_17.png successfully processed
+santa_18.png successfully processed
+santa_19.png successfully processed
+santa_20.png successfully processed
+santa_21.png successfully processed
+santa_22.png successfully processed
+santa_23.png successfully processed
+santa_24.png successfully processed
+santa_25.png successfully processed
+santa_26.png successfully processed
+
+Finished: 27 of 27 processed, 0 skipped.
+
+Operation "Format conversion" started 22.11.20 at 22:48:28
+Input directory is C:\Users\simar\Downloads\Santa
+Output directory is C:\Users\simar\OneDrive\Documents\Arduino\LED_Show_BMP\data\1
+
+santa_00.png successfully processed
+santa_01.png successfully processed
+santa_02.png successfully processed
+santa_03.png successfully processed
+santa_04.png successfully processed
+santa_05.png successfully processed
+santa_06.png successfully processed
+santa_07.png successfully processed
+santa_08.png successfully processed
+santa_09.png successfully processed
+santa_10.png successfully processed
+santa_11.png successfully processed
+santa_12.png successfully processed
+santa_13.png successfully processed
+santa_14.png successfully processed
+santa_15.png successfully processed
+santa_16.png successfully processed
+santa_17.png successfully processed
+santa_18.png successfully processed
+santa_19.png successfully processed
+santa_20.png successfully processed
+santa_21.png successfully processed
+santa_22.png successfully processed
+santa_23.png successfully processed
+santa_24.png successfully processed
+santa_25.png successfully processed
+santa_26.png successfully processed
+
+Finished: 27 of 27 processed, 0 skipped.
+
+Operation "Format conversion" started 22.11.20 at 22:58:34
+Input directory is C:\Users\simar\Downloads\Question Block
+Output directory is C:\Users\simar\OneDrive\Documents\Arduino\LED_Show_BMP\data\2
+
+block_00.png successfully processed
+block_01.png successfully processed
+block_02.png successfully processed
+block_03.png successfully processed
+block_04.png successfully processed
+block_05.png successfully processed
+block_06.png successfully processed
+block_07.png successfully processed
+block_08.png successfully processed
+block_09.png successfully processed
+
+Finished: 10 of 10 processed, 0 skipped.
+
+Operation "Format conversion" started 23.11.20 at 12:00:29
+Input directory is C:\Users\simar\Downloads\Reindeer
+Output directory is C:\Users\simar\OneDrive\Documents\Arduino\LED_Show_BMP\data\2
+
+sprite_00.png successfully processed
+sprite_01.png successfully processed
+sprite_02.png successfully processed
+sprite_03.png successfully processed
+sprite_04.png successfully processed
+sprite_05.png successfully processed
+sprite_06.png successfully processed
+sprite_07.png successfully processed
+sprite_08.png successfully processed
+sprite_09.png successfully processed
+sprite_10.png successfully processed
+sprite_11.png successfully processed
+sprite_12.png successfully processed
+sprite_13.png successfully processed
+sprite_14.png successfully processed
+sprite_15.png successfully processed
+sprite_16.png successfully processed
+sprite_17.png successfully processed
+
+Finished: 18 of 18 processed, 0 skipped.
+
+Operation "Format conversion" started 23.11.20 at 12:03:46
+Input directory is C:\Users\simar\Downloads\Santa
+Output directory is C:\Users\simar\OneDrive\Documents\Arduino\LED_Show_BMP\data\1
+
+santa_00.png successfully processed
+santa_01.png successfully processed
+santa_02.png successfully processed
+santa_03.png successfully processed
+santa_04.png successfully processed
+santa_05.png successfully processed
+santa_06.png successfully processed
+santa_07.png successfully processed
+santa_08.png successfully processed
+santa_09.png successfully processed
+santa_10.png successfully processed
+santa_11.png successfully processed
+santa_12.png successfully processed
+santa_13.png successfully processed
+santa_14.png successfully processed
+santa_15.png successfully processed
+santa_16.png successfully processed
+santa_17.png successfully processed
+santa_18.png successfully processed
+santa_19.png successfully processed
+santa_20.png successfully processed
+santa_21.png successfully processed
+santa_22.png successfully processed
+santa_23.png successfully processed
+santa_24.png successfully processed
+santa_25.png successfully processed
+santa_26.png successfully processed
+
+Finished: 27 of 27 processed, 0 skipped.
+
+Operation "Format conversion" started 29.11.20 at 19:27:43
+Input directory is C:\Users\simar\OneDrive\Pictures\3
+Output directory is C:\Users\simar\OneDrive\Documents\Arduino\LED_Show_BMP\data\3
+
+snowman_00.png successfully processed
+snowman_01.png successfully processed
+snowman_02.png successfully processed
+snowman_03.png successfully processed
+snowman_04.png successfully processed
+snowman_05.png successfully processed
+snowman_06.png successfully processed
+snowman_07.png successfully processed
+snowman_08.png successfully processed
+snowman_09.png successfully processed
+snowman_10.png successfully processed
+snowman_11.png successfully processed
+snowman_12.png successfully processed
+snowman_13.png successfully processed
+snowman_14.png successfully processed
+snowman_15.png successfully processed
+snowman_16.png successfully processed
+snowman_17.png successfully processed
+snowman_18.png successfully processed
+
+Finished: 19 of 19 processed, 0 skipped.
+
+Operation "Format conversion" started 30.11.20 at 14:55:59
+Input directory is C:\Users\simar\Downloads\ReindeerFace
+Output directory is C:\Users\simar\OneDrive\Documents\Arduino\LED_Show_BMP\data\4
+
+reindeerface_00.png successfully processed
+reindeerface_01.png successfully processed
+reindeerface_02.png successfully processed
+reindeerface_03.png successfully processed
+reindeerface_04.png successfully processed
+reindeerface_05.png successfully processed
+reindeerface_06.png successfully processed
+reindeerface_07.png successfully processed
+reindeerface_08.png successfully processed
+reindeerface_09.png successfully processed
+reindeerface_10.png successfully processed
+reindeerface_11.png successfully processed
+reindeerface_12.png successfully processed
+
+Finished: 13 of 13 processed, 0 skipped.
+
+Operation "Format conversion" started 30.11.20 at 21:34:32
+Input directory is C:\Users\simar\Downloads\Cane
+Output directory is C:\Users\simar\OneDrive\Documents\Arduino\LED_Show_BMP\data\5
+
+cane_00.png successfully processed
+cane_01.png successfully processed
+cane_02.png successfully processed
+cane_03.png successfully processed
+cane_04.png successfully processed
+cane_05.png successfully processed
+cane_06.png successfully processed
+cane_07.png successfully processed
+cane_08.png successfully processed
+cane_09.png successfully processed
+cane_10.png successfully processed
+cane_11.png successfully processed
+cane_12.png successfully processed
+cane_13.png successfully processed
+cane_14.png successfully processed
+cane_15.png successfully processed
+cane_16.png successfully processed
+cane_17.png successfully processed
+cane_18.png successfully processed
+cane_19.png successfully processed
+cane_20.png successfully processed
+cane_21.png successfully processed
+cane_22.png successfully processed
+cane_23.png successfully processed
+cane_24.png successfully processed
+cane_25.png successfully processed
+cane_26.png successfully processed
+
+Finished: 27 of 27 processed, 0 skipped.
+
+Operation "Format conversion" started 30.11.20 at 21:41:48
+Input directory is C:\Users\simar\Downloads\Cane
+Output directory is C:\Users\simar\OneDrive\Documents\Arduino\LED_Show_BMP\data\5
+
+cane_00.png successfully processed
+cane_01.png successfully processed
+cane_02.png successfully processed
+cane_03.png successfully processed
+cane_04.png successfully processed
+cane_05.png successfully processed
+cane_06.png successfully processed
+cane_07.png successfully processed
+cane_08.png successfully processed
+cane_09.png successfully processed
+cane_10.png successfully processed
+cane_11.png successfully processed
+cane_12.png successfully processed
+cane_13.png successfully processed
+cane_14.png successfully processed
+cane_15.png successfully processed
+cane_16.png successfully processed
+cane_17.png successfully processed
+cane_18.png successfully processed
+cane_19.png successfully processed
+cane_20.png successfully processed
+cane_21.png successfully processed
+cane_22.png successfully processed
+cane_23.png successfully processed
+cane_24.png successfully processed
+cane_25.png successfully processed
+cane_26.png successfully processed
+cane_27.png successfully processed
+cane_28.png successfully processed
+cane_29.png successfully processed
+cane_30.png successfully processed
+
+Finished: 31 of 31 processed, 0 skipped.
+
