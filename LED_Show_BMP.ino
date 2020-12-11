@@ -20,7 +20,7 @@
 
 */
 
-#include <Arduino.h>
+//#include <Arduino.h>
 
 #include <Adafruit_GFX.h>
 #include <Adafruit_NeoMatrix.h>
