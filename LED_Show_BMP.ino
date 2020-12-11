@@ -21,6 +21,8 @@
 */
 
 //#include <Arduino.h>
+#include <ESP8266WiFi.h>
+
 
 #include <Adafruit_GFX.h>
 #include <Adafruit_NeoMatrix.h>
@@ -92,6 +94,9 @@ void displayImage(File bmpFile, bool is24BPP); //Display image from BMP file in 
 
 void setup()
 {
+  //Turn Off WiFi
+  WiFi.mode(WIFI_OFF);
+
   //Initialize Serial console
   Serial.begin(115200);
   delay(10);
