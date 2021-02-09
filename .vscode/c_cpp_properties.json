@@ -3,14 +3,14 @@
         {
             "name": "Win32",
             "includePath": [
-                "C:\\Users\\simar\\AppData\\Local\\Arduino15\\packages\\esp8266\\tools\\**",
-                "C:\\Users\\simar\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.7.3\\**",
                 "C:\\Users\\simar\\OneDrive\\Documents\\Arduino\\libraries\\**",
                 "C:\\Users\\simar\\OneDrive\\Documents\\Arduino\\libraries\\Adafruit_NeoPixel",
                 "C:\\Program Files (x86)\\arduino-1.8.13\\libraries\\**",
                 "C:\\Users\\simar\\OneDrive\\Documents\\Arduino\\libraries\\Adafruit_NeoMatrix",
                 "C:\\Users\\simar\\OneDrive\\Documents\\Arduino\\libraries\\Adafruit_GFX_Library",
-                "C:\\Users\\simar\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.7.4\\**"
+                "C:\\Program Files (x86)\\arduino-1.8.13\\**",
+                "C:\\Users\\simar\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.7.4\\**",
+                "C:\\Users\\simar\\AppData\\Local\\Arduino15\\packages\\esp8266\\tools\\**"
             ],
             "forcedInclude": [],
             "intelliSenseMode": "msvc-x64",
