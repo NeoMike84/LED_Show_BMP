@@ -20,7 +20,9 @@
 
 */
 
-#include <Arduino.h>
+//#include <Arduino.h>
+#include <ESP8266WiFi.h>
+
 
 #include <Adafruit_GFX.h>
 #include <Adafruit_NeoMatrix.h>
@@ -31,6 +33,8 @@
 #define LED_PIN D6
 #define MATRIX_WIDTH 10
 #define MATRIX_HEIGHT 10
+
+/************Variables***************/
 
 //Creation de la variable pour la matrice -- Développer pour avoir les détails
 //Creation of the matrix variable
@@ -86,9 +90,11 @@ Adafruit_NeoMatrix matrix = Adafruit_NeoMatrix(MATRIX_WIDTH, MATRIX_HEIGHT, LED_
 Dir rootDir;
 File currentFile;
 
-//Fonction d'affichage d'un fichier BMP
-//Le 2ième paramètre indique si l'image est en 24BPP ou en 32
+/*   Function definition */
 void displayImage(File bmpFile, bool is24BPP); //Display image from BMP file in SPIFFS
+void initMatrix();
+void initFS();
+void displayFile(File aFile);
 
 void setup()
 {
@@ -96,22 +102,8 @@ void setup()
   Serial.begin(115200);
   delay(10);
 
-
-  //Initialize the matrix
-  matrix.begin();
-  matrix.setBrightness(255);
-  matrix.show();
-
-  //Initialisation du système de fichier
-  //Initialize Filesystem
-  Serial.print("Initializing FS...");
-
-  if (SPIFFS.begin())
-    Serial.println(" done!");
-  else
-  {
-    Serial.println(" failed!");
-  }
+  initMatrix();
+  initFS();
 
   //Ouvre le répertoire racine
   //Open the root directory
@@ -125,27 +117,14 @@ void loop()
   //For each file in root directory
   while (rootDir.next())
   {
+    
     //File is a bmp, seek to offset of pixel data
     currentFile = rootDir.openFile("r");
 
-    //Extract begining of bitmap from file and position cursor on it
-    //As per BMP file format spec, location is stored at offset 0x0A (see https://en.wikipedia.org/wiki/BMP_file_format)
-    currentFile.seek(0x0A, SeekSet);
-    char offset[4];
-    currentFile.readBytes(offset, 4);
+    Serial.print("Processing ");
+    Serial.println( currentFile.fullName());
 
-    //Extract BPP from file
-    //As per BMP File Format Spec stored at 0x1C (See https://en.wikipedia.org/wiki/BMP_file_format)
-    currentFile.seek(0x1C, SeekSet);
-    char bpp[2];
-    currentFile.readBytes(bpp, 2);
-
-    //Sets cursor at the beginning of Pixel Data
-    currentFile.seek(offset[0], SeekSet);
-
-    bool is24BPP = (bpp[0] == 24);
-    displayImage(currentFile, is24BPP);
-    delay(125);
+    displayFile(currentFile);
   }
 
   //Loop back to first file in folder
@@ -175,8 +154,7 @@ void displayImage(File bmpFile, bool is24BPP)
 
     char data[200];
     //Read a row from the file
-    Serial.print("Read bytes : ");
-    Serial.println(bmpFile.readBytes(data, bytesInARow));
+   bmpFile.readBytes(data, bytesInARow);
 
     //For each column in the row
     //Pour chaque colone dans la ligne (essentiellement chaque pixel)
@@ -212,4 +190,49 @@ void displayImage(File bmpFile, bool is24BPP)
     }
   }
   matrix.show();
+}
+
+//Initialize the LED matrix
+void initMatrix()
+{
+  //Initialize the matrix
+  matrix.begin();
+  matrix.setBrightness(255);
+  matrix.show();
+}
+
+//Initialisation du système de fichier
+//Initialize Filesystem
+void initFS()
+{
+  Serial.print("Initializing FS...");
+  if (SPIFFS.begin())
+    Serial.println(" done!");
+  else
+  {
+    Serial.println(" failed!");
+  }
+}
+
+//Process a file to be displayed
+void displayFile(File aFile)
+{
+  //Extract begining of bitmap from file and position cursor on it
+  //As per BMP file format spec, location is stored at offset 0x0A (see https://en.wikipedia.org/wiki/BMP_file_format)
+  aFile.seek(0x0A, SeekSet);
+  char offset[4];
+  aFile.readBytes(offset, 4);
+
+  //Extract BPP from file
+  //As per BMP File Format Spec stored at 0x1C (See https://en.wikipedia.org/wiki/BMP_file_format)
+  aFile.seek(0x1C, SeekSet);
+  char bpp[2];
+  aFile.readBytes(bpp, 2);
+
+  //Sets cursor at the beginning of Pixel Data
+  aFile.seek(offset[0], SeekSet);
+
+  bool is24BPP = (bpp[0] == 24);
+  displayImage(aFile, is24BPP);
+  delay(125);
 }
