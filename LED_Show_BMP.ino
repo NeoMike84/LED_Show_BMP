@@ -20,9 +20,9 @@
 
 */
 
-//#include <Arduino.h>
 #include <ESP8266WiFi.h>
-
+#include "ESP8266FtpServer.h"
+#include <WiFiManager.h>
 
 #include <Adafruit_GFX.h>
 #include <Adafruit_NeoMatrix.h>
@@ -30,9 +30,16 @@
 
 #include <FS.h>
 
+//Matrix Define
 #define LED_PIN D6
 #define MATRIX_WIDTH 10
 #define MATRIX_HEIGHT 10
+
+//WifiDefines
+#define MODE_LED D4 //Actually onboard LED to show operating mode
+#define MODE_SWITCH_PIN D0
+#define FTP_USER "user"
+#define FTP_PASS "password1!"
 
 /************Variables***************/
 
@@ -83,18 +90,24 @@
 // or column order.  The matrices use 800 KHz (v2) pixels that expect GRB
 // color data.
 Adafruit_NeoMatrix matrix = Adafruit_NeoMatrix(MATRIX_WIDTH, MATRIX_HEIGHT, LED_PIN,
-                            NEO_MATRIX_TOP + NEO_MATRIX_RIGHT + NEO_MATRIX_ROWS + NEO_MATRIX_ZIGZAG,
+                            NEO_MATRIX_TOP + NEO_MATRIX_LEFT + NEO_MATRIX_ROWS + NEO_MATRIX_ZIGZAG,
                             NEO_RGB + NEO_KHZ800);
 
 //Variable pointant vers le répertoire racine et le fichier courrant
 Dir rootDir;
 File currentFile;
 
+//FTP Server and WiFiManager
+WiFiManager wifiManager;
+bool ftpModeEnabled;
+FtpServer ftpSrv;
+
 /*   Function definition */
 void displayImage(File bmpFile, bool is24BPP); //Display image from BMP file in SPIFFS
 void initMatrix();
 void initFS();
 void displayFile(File aFile);
+bool ftpMode();
 
 void setup()
 {
@@ -102,34 +115,31 @@ void setup()
   Serial.begin(115200);
   delay(10);
 
-  initMatrix();
   initFS();
 
-  //Ouvre le répertoire racine
-  //Open the root directory
-  rootDir = SPIFFS.openDir("/");
+  //Act based on ops mode
+  ftpModeEnabled = ftpMode();
+  if(ftpModeEnabled)
+  {
+    wifiManager.autoConnect();
+    ftpSrv.begin(FTP_USER,FTP_PASS);
+  }
+  else
+  {
+    initMatrix();
+    //Ouvre le répertoire racine -- Open the root directory
+    rootDir = SPIFFS.openDir("/");
+  }
 }
-
 
 void loop()
 {
-  //Pour chaque fichier dans le répertoire racine
-  //For each file in root directory
-  while (rootDir.next())
-  {
-    
-    //File is a bmp, seek to offset of pixel data
-    currentFile = rootDir.openFile("r");
-
-    Serial.print("Processing ");
-    Serial.println( currentFile.fullName());
-
-    displayFile(currentFile);
-  }
-
-  //Loop back to first file in folder
-  //Retour au premier fichier du dossier
-  rootDir.rewind();
+  //Pass over control to other loop depending on operating mode
+  if(ftpModeEnabled)
+    ftpSrv.handleFTP();
+  else
+    displayLoop();
+  
 }
 
 //Affiche une image du fichier source (BMP)
@@ -235,4 +245,85 @@ void displayFile(File aFile)
   bool is24BPP = (bpp[0] == 24);
   displayImage(aFile, is24BPP);
   delay(125);
+}
+
+bool ftpMode()//Return true if Mode PIN is LOW (FTP Mode), false if HIGH (Display Mode)
+{
+  int modeSelect = 0;
+
+  //Init pins
+  pinMode(MODE_LED,OUTPUT);
+  pinMode(MODE_SWITCH_PIN,INPUT_PULLUP);
+
+  modeSelect = digitalRead(MODE_SWITCH_PIN);
+
+  if(modeSelect == LOW)//FTP Mode
+  {
+    Serial.println("Entering FTP Mode");
+    digitalWrite(MODE_LED,LOW);
+
+    //If we hold pin LOW for 5 secconds, we reset wifi settings
+    //We flash LED every half seccond in the meantime
+    int heldCounter = 0;
+    while(heldCounter <= 6)
+    {
+      delay(500);
+      digitalWrite(MODE_LED,!digitalRead(MODE_LED)); //Toggle LED PIN
+      Serial.print(heldCounter);
+
+      if(heldCounter == 6) //Held long enough for reset
+      {
+        Serial.println("Resetting WiFi credentials");
+        wifiManager.resetSettings();
+      }
+
+      modeSelect = digitalRead(MODE_SWITCH_PIN);
+      if(modeSelect != LOW) //If PIN is released
+      {
+        digitalWrite(MODE_LED,LOW);
+        return true;
+      }
+      ++heldCounter;
+    }
+    
+    
+
+    return true;
+  }
+  else //Display Mode
+  {
+    Serial.println("Entering display Mode");
+    digitalWrite(MODE_LED,HIGH);
+    return false;
+  }
+}
+
+//Loop called for ftp Mode
+void ftpLoop()
+{
+}
+
+//Loop called for display Mode
+void displayLoop()
+{
+  while(1)
+  {
+    //Pour chaque fichier dans le répertoire racine
+    //For each file in root directory
+    while (rootDir.next())
+    {
+      
+      //File is a bmp, seek to offset of pixel data
+      currentFile = rootDir.openFile("r");
+
+      Serial.print("Processing ");
+      Serial.println( currentFile.fullName());
+
+      displayFile(currentFile);
+    }
+
+    //Loop back to first file in folder
+    //Retour au premier fichier du dossier
+    rootDir.rewind();
+  }
 }
