@@ -260,3 +260,109 @@ cane_30.png successfully processed
 
 Finished: 31 of 31 processed, 0 skipped.
 
+Operation "Format conversion" started 09.02.21 at 20:23:27
+Input directory is C:\Users\simar\OneDrive\Documents\Arduino\LED_Show_BMP\imgSource
+Output directory is C:\Users\simar\OneDrive\Documents\Arduino\LED_Show_BMP\data
+
+1_cake_00.png successfully processed
+1_cake_01.png successfully processed
+1_cake_02.png successfully processed
+1_cake_03.png successfully processed
+1_cake_04.png successfully processed
+1_cake_05.png successfully processed
+1_cake_06.png successfully processed
+1_cake_07.png successfully processed
+1_cake_08.png successfully processed
+1_cake_09.png successfully processed
+1_cake_10.png successfully processed
+1_cake_11.png successfully processed
+1_cake_12.png successfully processed
+1_cake_13.png successfully processed
+1_cake_14.png successfully processed
+1_cake_15.png successfully processed
+1_cake_16.png successfully processed
+1_cake_17.png successfully processed
+1_cake_18.png successfully processed
+1_cake_19.png successfully processed
+1_cake_20.png successfully processed
+1_cake_21.png successfully processed
+1_cake_22.png successfully processed
+1_cake_23.png successfully processed
+1_cake_24.png successfully processed
+2_fireworks_00.png successfully processed
+2_fireworks_01.png successfully processed
+2_fireworks_02.png successfully processed
+2_fireworks_03.png successfully processed
+2_fireworks_04.png successfully processed
+2_fireworks_05.png successfully processed
+2_fireworks_06.png successfully processed
+2_fireworks_07.png successfully processed
+2_fireworks_08.png successfully processed
+2_fireworks_09.png successfully processed
+2_fireworks_10.png successfully processed
+2_fireworks_11.png successfully processed
+2_fireworks_12.png successfully processed
+2_fireworks_13.png successfully processed
+2_fireworks_14.png successfully processed
+2_fireworks_15.png successfully processed
+3_scrollingHeart_00.png successfully processed
+3_scrollingHeart_01.png successfully processed
+3_scrollingHeart_02.png successfully processed
+3_scrollingHeart_03.png successfully processed
+3_scrollingHeart_04.png successfully processed
+3_scrollingHeart_05.png successfully processed
+3_scrollingHeart_06.png successfully processed
+3_scrollingHeart_07.png successfully processed
+3_scrollingHeart_08.png successfully processed
+3_scrollingHeart_09.png successfully processed
+3_scrollingHeart_10.png successfully processed
+3_scrollingHeart_11.png successfully processed
+3_scrollingHeart_12.png successfully processed
+3_scrollingHeart_13.png successfully processed
+3_scrollingHeart_14.png successfully processed
+3_scrollingHeart_15.png successfully processed
+3_scrollingHeart_16.png successfully processed
+3_scrollingHeart_17.png successfully processed
+3_scrollingHeart_18.png successfully processed
+3_scrollingHeart_19.png successfully processed
+3_scrollingHeart_20.png successfully processed
+3_scrollingHeart_21.png successfully processed
+3_scrollingHeart_22.png successfully processed
+3_scrollingHeart_23.png successfully processed
+3_scrollingHeart_24.png successfully processed
+3_scrollingHeart_25.png successfully processed
+3_scrollingHeart_26.png successfully processed
+3_scrollingHeart_27.png successfully processed
+3_scrollingHeart_28.png successfully processed
+3_scrollingHeart_29.png successfully processed
+3_scrollingHeart_30.png successfully processed
+3_scrollingHeart_31.png successfully processed
+3_scrollingHeart_32.png successfully processed
+3_scrollingHeart_33.png successfully processed
+3_scrollingHeart_34.png successfully processed
+3_scrollingHeart_35.png successfully processed
+4_Heart_00.png successfully processed
+4_Heart_01.png successfully processed
+4_Heart_02.png successfully processed
+4_Heart_03.png successfully processed
+4_Heart_04.png successfully processed
+4_Heart_05.png successfully processed
+4_Heart_06.png successfully processed
+4_Heart_07.png successfully processed
+4_Heart_08.png successfully processed
+4_Heart_09.png successfully processed
+4_Heart_10.png successfully processed
+4_Heart_11.png successfully processed
+4_Heart_12.png successfully processed
+4_Heart_13.png successfully processed
+4_Heart_14.png successfully processed
+4_Heart_15.png successfully processed
+4_Heart_16.png successfully processed
+4_Heart_17.png successfully processed
+4_Heart_18.png successfully processed
+4_Heart_19.png successfully processed
+4_Heart_20.png successfully processed
+4_Heart_21.png successfully processed
+
+Finished: 99 of 99 processed, 0 skipped.
+

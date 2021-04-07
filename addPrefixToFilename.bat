@@ -1,0 +1,1 @@
+for %a in (*.*) do ren "%a" "1_%a"
