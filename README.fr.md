@@ -1,53 +1,39 @@
 # LED_Show_BMP
-WeMos D1 BMP Show to NeoMatrix
+WeMos D1 BMP Animation sur une matrice NeoPixel
 
-This project uses the SPIFFS filesystem of the WeMos D1 to store BMP files and display them on a NeoPixel Matrix
-This was built on a 10x10 matrix with limited testing on other configuration
+Ce projet utilise le systeme d efichier SPIFFS du WeMos D1 pour tocker des fichiers BMP et les afficher sur une matrice de NeoPixel
+Il a été bati sur une matrice de 10x10 avec très peu d'essais sur d'autres configurations
 
-## Configuration options
-I tired to keep most parameters as #define at the top of the code
-  * LED_PIN indicates the pin connected to the Neopixel Matrix Data Line
+## Options de configuration
+J'ai essayé de garder la plupart des paramètres dans les #define au début du code
+  * LED_PIN indique sur quelle broche est branché la lugne de donnée de la matrice de NeoPixel
   * MODE_SWITCH
   * MODE_LED
-  * MATRIX_WIDTH is self explanatory
-  * MATRIX_WIDTH is set in as a \#define
-  * MATRIX_HEIGHT is set in as a \#define
-  * LED_PIN is set in as a \#define
-  * MATRIX_LAYOUT_FLAGS: add together as needed *(e.g. NEO_MATRIX_TOP + NEO_MATRIX_RIGHT + NEO_MATRIX_ROWS + NEO_MATRIX_ZIGZAG)*
-    * NEO_MATRIX_TOP, NEO_MATRIX_BOTTOM, NEO_MATRIX_LEFT, NEO_MATRIX_RIGHT:     
-     Position of the FIRST LED in the FIRST MATRIX;   
-     Pick two
-       
+  * MATRIX_WIDTH Largeur de la matrice
+  * MATRIX_HEIGHT hauteur de la matrice
+  * MATRIX_LAYOUT_FLAGS:Parametres de disposition de la matrice divisé en 2 parties : Additionnez les éléments requis pour définir la première LED de la matrice
+    *Position de la première LED (En choisir 2 )
+    *(e.g. NEO_MATRIX_TOP + NEO_MATRIX_RIGHT + NEO_MATRIX_ROWS + NEO_MATRIX_ZIGZAG)
+    * NEO_MATRIX_TOP, NEO_MATRIX_BOTTOM, NEO_MATRIX_LEFT, NEO_MATRIX_RIGHT
+    * Disposition de la matrice en ligne ou colone, en choisir 1
     * NEO_MATRIX_ROWS, NEO_MATRIX_COLUMNS :   
-     LEDs within matrix are arranged in horizontal rows or in vertical columns, respectively;  
-     Pick one or the other.     
-       
+    * Les lignes de la matrice sont progressive (123,456), ou en zigzag (123,654,789)
     * NEO_MATRIX_PROGRESSIVE, NEO_MATRIX_ZIGZAG:   
-      all rows/columns WITHIN EACH MATRIX proceed in the same order, or alternate lines reverse direction;  
-      Pick one.
-        
-    * NEO_TILE_TOP, NEO_TILE_BOTTOM, NEO_TILE_LEFT, NEO_TILE_RIGHT:  
-      Position of the FIRST MATRIX (tile) in the OVERALL DISPLAY;  
-      Pick two, e.g. NEO_TILE_TOP + NEO_TILE_LEFT for the top-left corner.
-
-    * NEO_TILE_PROGRESSIVE, NEO_TILE_ZIGZAG:  
-      The ROWS/COLUMS OF MATRICES(tiles) in the OVERALL DISPLAY proceed in the same order for every line, or alternate lines reverse direction;  
-      When using zig-zag order, the orientation of the matrices in alternate rows will be rotated 180 degrees (this is normal -- simplifies wiring).  
-      Pick one.  
-  * MATRIX_TYPE_FLAGS : add together as needeed *(e.g. NEO_RGB + NEO_KHZ800)*
+      
+  * MATRIX_TYPE_FLAGS : Type de NeoPixels add together as needeed *(e.g. NEO_RGB + NEO_KHZ800)*
     * NEO_RGB     Pixels are wired for RGB bitstream (v1 pixels)
     * NEO_GRB     Pixels are wired for GRB bitstream (v2 pixels)
     * NEO_KHZ400  400 KHz bitstream (e.g. FLORA v1 pixels)
     * NEO_KHZ800  800 KHz bitstream (e.g. High Density LED strip)
 
-## Operating modes
-There is two operating mode controlled by a switch on the breadboard
+## Modes d'opération
+Il y a 2 modes d'opérations sélectionné par un interupteur sur le circuit.
 
-By default, the code enters display mode
-To enter FTP Mode, the mode button has to be held while the module is reset 
+Par défaut, le code se place en mode affichage
+Pour sélectionner le mode FTP, il faut appuyer sur le boutton de sélection pendant que le module s'initialise
 
-### Display mode
-This mode reads the SPIFFS filesystem sequentially and displays the BMP images to the Neopixel Matrix
+### Mode Affichage
+Ce mode lit le système de fichier SPIFFS séquentiellement et affiche les images BMP sur la matrice de NeoPixels
 
 ### FTP Mode
 This mode enables the onboard wifi and connects to the last saved network by default.
