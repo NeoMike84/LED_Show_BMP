@@ -34,6 +34,8 @@
 #define LED_PIN D6
 #define MATRIX_WIDTH 10
 #define MATRIX_HEIGHT 10
+#define MATRIX_LAYOUT_FLAGS NEO_MATRIX_TOP + NEO_MATRIX_RIGHT + NEO_MATRIX_ROWS + NEO_MATRIX_ZIGZAG
+#define MATRIX_TYPE_FLAGS NEO_RGB + NEO_KHZ800
 
 //WifiDefines
 #define MODE_LED D4 //Actually onboard LED to show operating mode
@@ -89,9 +91,7 @@
 // There's only one row here, so it doesn't matter if we declare it in row
 // or column order.  The matrices use 800 KHz (v2) pixels that expect GRB
 // color data.
-Adafruit_NeoMatrix matrix = Adafruit_NeoMatrix(MATRIX_WIDTH, MATRIX_HEIGHT, LED_PIN,
-                            NEO_MATRIX_TOP + NEO_MATRIX_LEFT + NEO_MATRIX_ROWS + NEO_MATRIX_ZIGZAG,
-                            NEO_RGB + NEO_KHZ800);
+Adafruit_NeoMatrix matrix = Adafruit_NeoMatrix(MATRIX_WIDTH, MATRIX_HEIGHT, LED_PIN,MATRIX_LAYOUT_FLAGS,MATRIX_TYPE_FLAGS);
 
 //Variable pointant vers le répertoire racine et le fichier courrant
 Dir rootDir;
@@ -102,12 +102,11 @@ WiFiManager wifiManager;
 bool ftpModeEnabled;
 FtpServer ftpSrv;
 
-/*   Function definition */
+/***************Function definition*************/
 void displayImage(File bmpFile, bool is24BPP); //Display image from BMP file in SPIFFS
 void initMatrix();
 void initFS();
 void displayFile(File aFile);
-bool ftpMode();
 
 void setup()
 {
@@ -296,11 +295,6 @@ bool ftpMode()//Return true if Mode PIN is LOW (FTP Mode), false if HIGH (Displa
     digitalWrite(MODE_LED,HIGH);
     return false;
   }
-}
-
-//Loop called for ftp Mode
-void ftpLoop()
-{
 }
 
 //Loop called for display Mode
