@@ -41,7 +41,7 @@ I tired to keep most parameters as #define at the top of the code
     * NEO_KHZ800  800 KHz bitstream (e.g. High Density LED strip)
 
 ## Operating modes
-There is to operating mode controlled by a switch on the breadboard
+There is two operating mode controlled by a switch on the breadboard
 
 By default, the code enters display mode
 To enter FTP Mode, the mode button has to be held while the module is reset 
